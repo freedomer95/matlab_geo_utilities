@@ -1,3 +1,7 @@
+% DESCRIPTION
+% This script is giving a GMT-like map in spheric projection for the specified coordinates.
+% Coastlines are by default in a full resolution but it can be changed. 
+
 % DISCLAIMER:
 % before running this script you need the "Mapping Toolbox" of MATLAB, you can install it if you don't have.
 % This should be running for versions later than 2016 (tested on 2019), don't know for before.
