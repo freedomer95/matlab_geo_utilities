@@ -27,6 +27,7 @@ else
 end
 
 %% MAKING THE MAP
+fig_map=figure;
 % Setting the general map
 latlim=([LAS LAN]);
 lonlim=([LOW LOE]);
@@ -40,4 +41,16 @@ geoshow([shorelines.Lat],[shorelines.Lon],'DisplayType','Polygon',...
 sea_color=[0.7 1 1]; % Here you can color the sea (ligth blue in this example)
 setm(gca, 'FFaceColor',sea_color) 
 
+%% SAVING SECTION (EXPORT THE FIGURE AS PDF, PNG...) [OPTIONAL]
+saving="OFF"; % or "ON"
+if saving=="ON"
+file_name="filename_example";
+path_and_name(r,:)=[sprintf("C:\\Users\\computer\\folderxx\\%s",file_name)];
+fig_map.PaperOrientation='landscape'; % Orientation 'landscape' or 'portrait'
+fig_map.PaperPositionMode='auto';
+fig_map.PaperType='A3'; % Edit here the papersize
+fig_map.Renderer='painters'; % Choose renderers 'painters' or 'OpenGL'
+print(fig_map,path_and_name,'-dpdf','-fillpage') % Change the format
+end
+     
 disp('All done! <')
